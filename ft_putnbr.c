@@ -6,11 +6,11 @@
 /*   By: nlyamani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 18:32:49 by nlyamani          #+#    #+#             */
-/*   Updated: 2024/11/11 18:50:51 by nlyamani         ###   ########.fr       */
+/*   Updated: 2024/11/13 17:00:44 by nlyamani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
 static void	write_int(int i, char*str)
 {

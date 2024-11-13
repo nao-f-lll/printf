@@ -6,11 +6,11 @@
 /*   By: nlyamani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 19:23:29 by nlyamani          #+#    #+#             */
-/*   Updated: 2024/11/11 19:48:05 by nlyamani         ###   ########.fr       */
+/*   Updated: 2024/11/13 17:02:21 by nlyamani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
 static int	ft_void_to_hex(size_t nbr)
 {
@@ -19,11 +19,9 @@ static int	ft_void_to_hex(size_t nbr)
 
 	base = "0123456789abcdef";
 	cnt = 0;
-	while (nbr >= 16)
+	if (nbr >= 16)
 	{
-		write(1, &base[nbr % 16], 1);
-		nbr /= 16;
-		cnt++;
+		cnt = cnt + ft_void_to_hex(nbr / 16);
 	}
 	write(1, &base[nbr % 16], 1);
 	cnt++;
@@ -39,6 +37,6 @@ int	ft_putptr(void *ptr)
 	cnt = 0;
 	write(1, "0x", 2);
 	cnt += 2;
-	cnt += ft_void_to_hex((unsigned long) ptr);
+	cnt += ft_void_to_hex((size_t) ptr);
 	return (cnt);
 }

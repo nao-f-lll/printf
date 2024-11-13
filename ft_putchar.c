@@ -6,11 +6,11 @@
 /*   By: nlyamani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 18:30:56 by nlyamani          #+#    #+#             */
-/*   Updated: 2024/11/11 18:37:15 by nlyamani         ###   ########.fr       */
+/*   Updated: 2024/11/13 17:00:12 by nlyamani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
 int	ft_putchar(char c)
 {

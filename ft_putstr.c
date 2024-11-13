@@ -6,16 +6,17 @@
 /*   By: nlyamani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 18:41:53 by nlyamani          #+#    #+#             */
-/*   Updated: 2024/11/11 18:42:13 by nlyamani         ###   ########.fr       */
+/*   Updated: 2024/11/13 17:01:45 by nlyamani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
 int	ft_putstr(char *s)
 {
 	int	c;
 
+	c = 0;
 	if (s != NULL)
 	{
 		c = 0;

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_hex.c                                       :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlyamani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:42:17 by nlyamani          #+#    #+#             */
-/*   Updated: 2024/11/11 18:38:31 by nlyamani         ###   ########.fr       */
+/*   Updated: 2024/11/13 17:00:54 by nlyamani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
 static int	ft_convert_dec_hex(char*nbrs, int nbr, int is_upper)
 {
@@ -48,16 +48,3 @@ int	ft_puthex(int nbr, int is_upper)
 	}
 	return (counter);
 }
-/*
-int	main(void)
-{
-	#include <stdio.h>
-	int counter = ft_put_hex(2047, 1);
-	printf(" %d\n", counter);
-	
-	int counter1 = ft_put_hex(2047, 0);
-	printf(" %d\n", counter);
-
-	return (0);
-}
-*/

@@ -6,11 +6,11 @@
 /*   By: nlyamani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 18:43:02 by nlyamani          #+#    #+#             */
-/*   Updated: 2024/11/11 18:43:11 by nlyamani         ###   ########.fr       */
+/*   Updated: 2024/11/13 18:27:18 by nlyamani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
 int	ft_putunsnbr(unsigned int n)
 {
@@ -25,7 +25,7 @@ int	ft_putunsnbr(unsigned int n)
 	if (n == 0)
 	{
 		write(1, "0", 1);
-		return (2);
+		return (1);
 	}
 	while (nl > 0)
 	{
