@@ -20,7 +20,7 @@ int	ft_putstr(char *s)
 	if (s != NULL)
 	{
 		c = 0;
-		while (s && *s)
+		while (*s)
 		{
 			write(1, s++, 1);
 			c++;
@@ -28,6 +28,6 @@ int	ft_putstr(char *s)
 		return (c);
 	}
 	else
-		ft_putstr("(null)");
+		return (c + ft_putstr("(null)"));
 	return (c);
 }

@@ -12,6 +12,7 @@
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+# define INT_MIN -2147483648
 # include <stdarg.h>
 # include <unistd.h>
 
@@ -21,4 +22,5 @@ int	ft_putunsnbr(unsigned int n);
 int	ft_putnbr(int n);
 int	ft_puthex(int n, int fd);
 int	ft_putptr(void *ptr);
+int	ft_printf(const char *format, ...);
 #endif

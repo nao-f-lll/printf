@@ -27,13 +27,12 @@ int	ft_putnbr(int n)
 	i = 0;
 	c = 0;
 	if (n == 0)
-	{
-		write(1, "0", 1);
-		return (1);
-	}
+		return (write(1, "0", 1), 1);
 	if (n < 0)
 	{
 		write(1, "-", 1);
+		if (n == INT_MIN)
+			return (write(1, "2147483648", 10), c = 11, c);
 		n = -n;
 		c++;
 	}
@@ -43,6 +42,5 @@ int	ft_putnbr(int n)
 		n /= 10;
 		c++;
 	}
-	write_int(i, str);
-	return (c);
+	return (write_int(i, str), c);
 }

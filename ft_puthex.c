@@ -12,16 +12,11 @@
 
 #include "ft_printf.h"
 
-static int	ft_convert_dec_hex(char*nbrs, int nbr, int is_upper)
+static int	handle_unsig_coversion(unsigned int nbr, char *base, char *nbrs)
 {
-	int		i;
-	char	*base;
+	int	i;
 
 	i = 0;
-	if (is_upper)
-		base = "0123456789ABCDEF";
-	else
-		base = "0123456789abcdef";
 	while (nbr >= 16)
 	{
 		nbrs[i] = base[nbr % 16];
@@ -30,12 +25,26 @@ static int	ft_convert_dec_hex(char*nbrs, int nbr, int is_upper)
 	}
 	nbrs[i] = base[nbr % 16];
 	i++;
+	nbrs[i] = '\0';
 	return (i);
+}
+
+static int	ft_convert_dec_hex(char*nbrs, int nbr, int is_upper)
+{
+	char			*base;
+	unsigned int	u_nbr;
+
+	if (is_upper)
+		base = "0123456789ABCDEF";
+	else
+		base = "0123456789abcdef";
+	u_nbr = (unsigned int) nbr;
+	return (handle_unsig_coversion(u_nbr, base, nbrs));
 }
 
 int	ft_puthex(int nbr, int is_upper)
 {
-	char	nbrs[8];
+	char	nbrs[9];
 	int		i;
 	int		counter;
 

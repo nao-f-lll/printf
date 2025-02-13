@@ -19,19 +19,19 @@ static int	select_option(const char *format, int ind, va_list args)
 	cnt = 0;
 	if (*(format + ind + 1) == '%')
 		cnt += ft_putchar('%');
-	if (*(format + ind + 1) == 'c')
+	else if (*(format + ind + 1) == 'c')
 		cnt += ft_putchar((char) va_arg(args, int));
-	if (*(format + ind + 1) == 'd' || *(format + ind + 1) == 'i')
+	else if (*(format + ind + 1) == 'd' || *(format + ind + 1) == 'i')
 		cnt += ft_putnbr(va_arg(args, int));
-	if (*(format + ind + 1) == 'u')
+	else if (*(format + ind + 1) == 'u')
 		cnt += ft_putunsnbr(va_arg(args, unsigned int));
-	if (*(format + ind + 1) == 'X')
+	else if (*(format + ind + 1) == 'X')
 		cnt += ft_puthex(va_arg(args, unsigned int), 1);
-	if (*(format + ind + 1) == 'x')
+	else if (*(format + ind + 1) == 'x')
 		cnt += ft_puthex(va_arg(args, unsigned int), 0);
-	if (*(format + ind + 1) == 's')
+	else if (*(format + ind + 1) == 's')
 		cnt += ft_putstr(va_arg(args, char *));
-	if (*(format + ind + 1) == 'p')
+	else if (*(format + ind + 1) == 'p')
 		cnt += ft_putptr(va_arg(args, void *));
 	return (cnt);
 }
@@ -63,10 +63,8 @@ int	ft_printf(const char *format, ...)
 }
 /*
 #include <stdio.h>
-
 int main(void)
 {
-
 	printf("Caso %% 1 : \n");
 	int c1cntft = ft_printf("%%");
 	int c1cntpf = printf("%%"); 
